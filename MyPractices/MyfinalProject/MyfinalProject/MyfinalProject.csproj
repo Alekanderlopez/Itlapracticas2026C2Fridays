@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="C:\Itlapracticas2026C2Fridays\Itlapracticas2026C2Fridays\MyPractices\MyfinalProject\MyfinalProject parte 2.cs" Link="MyfinalProject parte 2.cs" />
+    <Compile Include="C:\Itlapracticas2026C2Fridays\Itlapracticas2026C2Fridays\MyPractices\MyfinalProject\MyfinalProject parte 3.cs" Link="MyfinalProject parte 3.cs" />
+    <Compile Include="C:\Itlapracticas2026C2Fridays\Itlapracticas2026C2Fridays\MyPractices\MyfinalProject\MyfinalProject parte 4.cs" Link="MyfinalProject parte 4.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
   </ItemGroup>
 

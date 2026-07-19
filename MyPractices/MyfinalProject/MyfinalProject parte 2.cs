@@ -1,32 +1,9 @@
-﻿// Alexander Jose Lopez Almonte
-// Project: Company Vehicle Control
-// Description: Console application to register vehicles, drivers,
-// and maintenance records.
+﻿/*Alexander José López Almonte
+Proyecto: Control de Vehículos de una Empresa
+Descripción: Aplicación en consola para registrar vehículos, conductores y mantenimientos. Permite CRUD de vehículos y seguimiento de revisiones. Clases sugeridas: Vehiculo, Conductor, Mantenimiento*/
 
-using Microsoft.Data.SqlClient;
-using System.Collections.Generic;
 
-try
-{
-    string connectionString =
-        @"Server=localhost;Database=VehicleManagement;Trusted_Connection=True;TrustServerCertificate=True;";
 
-    SqlConnection connection = new SqlConnection(connectionString);
-
-    connection.Open();
-
-    Console.WriteLine("Connected successfully!");
-
-    connection.Close();
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
-
-// Lists
-List<Vehicle> vehicles = new();
-List<Maintenance> maintenances = new();
 
 int option;
 
@@ -126,60 +103,3 @@ do
     }
 
 } while (option != 4);
-
-// Vehicle Class
-class Vehicle
-{
-    public string LicensePlate { get; set; }
-    public string Brand { get; set; }
-    public string Model { get; set; }
-    public Vehicle(string licensePlate, string brand, string model)
-    {
-        LicensePlate = licensePlate;
-        Brand = brand;
-        Model = model;
-    }
-}
-
-// Driver Class
-class Driver
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string LicenseNumber { get; set; }
-
-    public Driver(int id, string name, string licenseNumber)
-    {
-        Id = id;
-        Name = name;
-        LicenseNumber = licenseNumber;
-    }
-}
-
-class Maintenance
-{
-    public int Id { get; set; }
-    public string VehicleLicensePlate { get; set; }
-    public DateTime Date { get; set; }
-    public string Description { get; set; }
-
-    public Maintenance(int id, string vehicleLicensePlate,
-        DateTime date, string description)
-    {
-        Id = id;
-        VehicleLicensePlate = vehicleLicensePlate;
-        Date = date;
-        Description = description;
-    }
-}
-
-public class DatabaseConnection
-{
-    private string connectionString =
-        @"Server=localhost;Database=VehicleManagement;Trusted_Connection=True;TrustServerCertificate=True;";
-
-    public SqlConnection GetConnection()
-    {
-        return new SqlConnection(connectionString);
-    }
-}
